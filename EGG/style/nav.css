@@ -1,0 +1,500 @@
+@charset "utf-8";
+
+/* Base -------------------------------------- */
+*, *::before, *::after {
+	box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, "微軟正黑體", sans-serif;
+	background-color: #333;
+    color: #fff;
+}
+
+img {
+	vertical-align: bottom;
+}
+
+.header{
+	z-index: 9999;
+    max-width: 100%;
+	position: fixed;
+	right: 0;
+	left: 0;
+	top: 0;
+}
+a{
+    text-decoration: none;
+    /* color: black; */
+}
+/* 導覽列--------------------------------- */
+.nav{
+    /* max-width: 1920px; */
+    margin: auto;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+	height: 80px;
+	overflow: hidden;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	/* offset-x | offset-y | blur-radius | spread-radius | color */
+}
+.nav-icon{
+    padding: 1.5rem;
+    font-size: 2.5rem;
+	color: #fff;
+}
+
+.deskmenu{
+    display: flex;
+    padding: 1.5rem;
+}
+
+.nav-item a {
+	font-size: 1.5rem;
+	padding:0.8rem;
+	display: block;
+	color: #fff;
+	transition: transform .3s ease;
+}
+.nav-item a::after {
+	content: attr(title);
+	display: block;
+	margin-top: 30px;
+	text-align: center;
+	text-transform: capitalize;
+}
+.deskmenu .nav-item:hover a {
+	transform: translateY(-60px);
+}
+
+.mobilemenu,
+.btn-menu{
+    display: none;
+}
+
+.mobilemenu {
+	top: 80px;
+	z-index: 1;
+	position: fixed;
+	right: -100%;
+	background: rgba(71, 71, 71, 0.8);
+	width: 100%;
+	height: 100vh;
+	transition: all .5s;
+}
+.mobilemenu.active {
+	right: 0;
+}
+
+.mobilemenu a{
+    display: block;
+	text-decoration: none;
+	color: #eee;
+	font-size: 1.5rem;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+    margin-top: 2.5rem;
+}
+
+.btn-menu {
+	z-index: 999999;
+	width: 3rem;
+	height: 3rem;
+	background: #fff;
+	position: fixed;
+	top: 1rem;
+	right: 1.4rem;
+	padding: 10px;
+	border-radius: 5px;
+	box-shadow: 1px 2px 3px #888888;
+	cursor: pointer;
+    margin-top: 0.4rem;
+}
+
+.btn-menu div {
+	width: 100%;
+	height: 3px;
+	border-radius: 5px;
+	background: #000;
+	transition: all .3s;
+	margin-bottom: 0.6rem;
+}
+
+
+.mobilemenu{
+    display: none;
+}
+
+
+
+@media(max-width: 960px){
+ .deskmenu{
+    display: none;
+ }
+.mobilemenu,
+.btn-menu{
+    display: block;
+}
+  }
+
+/* 打字效果---------------- */
+
+.word {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+	min-height: 100vh;
+	background-image: url(../images/onechicken.jpg);
+	background-size: cover;
+	background-position: center;
+}
+
+h1 {
+    font-size: 6rem;
+    font-family: monospace;
+    width: 6ch;
+    overflow: hidden;
+	color: #fff;
+	text-shadow: 0.2rem 0.2rem 0.2rem 0.2rem rgba(0,0,0,0.5);
+    animation: 2s typing steps(11 , jump-none) infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 1ch;
+    }
+
+    to {
+        width: 11ch;
+    }
+}
+
+@media(max-width: 960px){
+	h1{
+		font-size: 4rem;
+	}
+}
+/* 產品頁 */
+
+
+/* card */
+.productpage {
+	min-height: 85vh;
+    /* background-color: #000; */
+}
+
+.cardtitle {
+	text-align: center;
+	font-size: 3rem;
+	margin: 2.5rem 0;
+}
+
+.card-list {
+	display: flex;
+	flex-wrap: wrap;
+	max-width: 1350px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card {
+	width: 33.3333%;
+	padding: 0 0.6rem;
+}
+
+.img-resp {
+	max-width: 100%;
+	height: auto;
+	overflow: hidden;
+	transition: ease-in-out .5s;
+}
+
+.img-resp:hover {
+	transform: scale(1.2);
+}
+
+.cardimg {
+	overflow: hidden;
+}
+.smalltitle,
+.title,
+.money{
+	color: #fff;
+	
+}
+
+.smalltitle {
+	font-size: 0.9rem;
+	line-height: 1.8rem;
+}
+
+.title {
+	font-size: 1.5rem;
+	line-height: 3rem;
+}
+
+.money {
+	font-size: 1rem;
+	line-height: 2rem;
+}
+
+.soldout {
+	position: absolute;
+	z-index: 1;
+	margin: 0.5rem;
+	padding: 0.4rem;
+	background-color: #FF8189;
+	color: #fff;
+	border-radius: 3px;
+	box-shadow: 0.2px 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.2);
+	text-shadow: 0.2px 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.2);
+}
+
+@media(max-width: 960px) {
+	.card {
+		width: 50%;
+	}
+}
+
+@media(max-width: 560px) {
+	.card {
+		width: 100%;
+	}
+}
+
+/* news 內頁面 */
+
+.news{
+    min-height: 90vh;
+}
+.newsbase1{
+    background-image: url(../images/onechicken.jpg);
+    background-size: cover;
+    background-position: center;
+    max-width: 100%; 
+    height: 400px;
+    margin: auto;
+    margin-top: 0.6rem;
+    text-align: center;
+    font-size: 6rem;
+    font-weight: bold;
+    line-height: 18rem;
+    display: flex;
+    flex-direction: column;
+    text-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.5);
+
+}
+.newsbase2{
+    cursor: pointer;
+    z-index: 1;
+    max-width: 900px;
+    background-color: #fff;
+    color: #333;
+    margin: auto;
+    margin-top: -5rem;
+    margin-bottom: 5rem;
+    padding: 2.5rem;
+    border-bottom: solid 2px #333;
+    border-radius: 5px;
+}
+.date{
+    font-size: 1.5rem;
+    font-family: monospace;
+}
+
+.newstitle{
+    font-size: 2.4rem;
+    line-height: 4.6rem;
+}
+
+@media(max-width: 881px) {
+ .newstitle{
+    font-size: 1.8rem;
+    line-height: 4rem;
+ }
+}
+
+@media(max-width: 560px) {
+    .newstitle{
+       font-size: 1.3rem;
+       line-height: 3rem;
+    }
+   }
+
+   @media(max-width: 420px) {
+    .newstitle{
+       font-size: 1rem;
+       line-height: 2rem;
+    }
+   }
+
+   .map-resp {
+	margin-top: 4rem;
+	width: 100%;
+	/* height: 55vh; */
+	/* display: block; */
+}
+
+/* 跑馬燈 */
+
+.mapsection {
+    position: relative;
+    width: 100vw;
+    height: 650px;
+    overflow: hidden;
+}
+
+.mapsection .scroll {
+    width: 100%;
+    display: flex;
+}
+
+.mapsection .scroll div {
+    color: #000;
+    font-size: 3em;
+    background: #fff;
+    white-space: nowrap;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: animate 40s linear infinite;
+    animation-delay: -40s;
+}
+.mapsection .scroll div:nth-child(2)
+{
+    animation: animate2 40s linear infinite;
+    animation-delay: -20s;
+}
+
+.mapsection .scroll div span{
+    -webkit-text-stroke: 2px #000;
+    color: transparent;
+}
+
+@keyframes animate
+{
+    0%
+    {
+        transform: translateX(100%);
+    }
+    100%
+    {
+        transform: translateX(-100%);
+    }
+
+}
+
+@keyframes animate2
+{
+    0%
+    {
+        transform: translateX(0);
+    }
+    100%
+    {
+        transform: translateX(-200%);
+    }
+
+}
+
+.mapsection .scroll.text1{
+    transform: rotate(0deg) translateY(0px) translateX(0px);
+    box-shadow: 0 5px 15px rgba(0,0,0.5);
+}
+
+.mapsection .scroll.text2{
+    transform: rotate(0deg) translateY(-580px) translateX(0px);
+    box-shadow: 0 5px 15px rgba(0,0,0.5);
+}
+
+
+/* 聯絡 */
+.contactbox {
+	max-width: 1200px;
+	min-height: 50vh;
+	/* background-color: #eee; */
+	margin: auto;
+	/* margin-top: 9rem; */
+	padding: 1rem;
+	border-radius: 5px;
+}
+
+.contactbox_flex {
+	display: flex;
+}
+
+.contactbox h3 {
+	text-align: center;
+	font-size: 3rem;
+	line-height: 6rem;
+	color: #fff;
+	text-shadow: 0.2px 0.2px 0.2px 0.2px rgba(0, 0, 0, 0.2);
+}
+
+.left {
+	background-image: url(../images/onechicken.jpg);
+	background-size: cover;
+	background-position: center;
+	width: 50%;
+	height: 300px;
+	margin: auto;
+	padding: 3rem;
+	box-shadow: 0.2px 0.2px 0.2px 0.2px rgba(255, 255, 255, 0.2);
+}
+
+.right {
+	width: 50%;
+	padding: 3rem;
+	display: flex;
+	flex-direction: column;
+}
+
+.acc {
+	width: 200px;
+	height: 50px;
+	font-size: 1.3rem;
+	margin: 0.6rem;
+	color: #333;
+	border: none;
+	padding: 0.3rem;
+}
+
+.acc1 {
+	width: 440px;
+	height: 100px;
+}
+
+.join {
+	height: 50px;
+	width: 150px;
+	border: none;
+	border-radius: 15px;
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	color: #fff;
+	background-color: #BA7967;
+	margin-top: 1.2rem;
+}
+
+.join:hover {
+	color: #BA7967;
+	background-color: #fff;
+}
+
+@media(max-width: 1200px) {
+	.contactbox_flex {
+		display: block;
+	}
+	.left,.right{
+		width: 100%;
+	}
+
+}
+
+@media(max-width: 560px) {
+.acc1{
+	width: 300px;
+}
+}
