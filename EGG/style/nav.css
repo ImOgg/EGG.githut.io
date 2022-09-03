@@ -415,9 +415,7 @@ h1 {
 .contactbox {
 	max-width: 1200px;
 	min-height: 50vh;
-	/* background-color: #eee; */
 	margin: auto;
-	/* margin-top: 9rem; */
 	padding: 1rem;
 	border-radius: 5px;
 }
@@ -447,23 +445,25 @@ h1 {
 
 .right {
 	width: 50%;
-	padding: 3rem;
 	display: flex;
 	flex-direction: column;
+	/* background-color: black; */
 }
 
+.acc,.join{	margin-left: 1.2rem;}
+
+
 .acc {
-	width: 200px;
+	width: 42%;
 	height: 50px;
 	font-size: 1.3rem;
-	margin: 0.6rem;
 	color: #333;
 	border: none;
-	padding: 0.3rem;
+	margin-top: 0.6rem;
 }
 
 .acc1 {
-	width: 440px;
+	width: calc(84% + 1.2rem);
 	height: 100px;
 }
 
@@ -476,6 +476,7 @@ h1 {
 	color: #fff;
 	background-color: #BA7967;
 	margin-top: 1.2rem;
+	
 }
 
 .join:hover {
@@ -494,7 +495,7 @@ h1 {
 }
 
 @media(max-width: 560px) {
-.acc1{
-	width: 300px;
+.acc{
+	font-size: 1rem;
 }
 }
