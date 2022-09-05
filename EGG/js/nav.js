@@ -31,3 +31,7 @@ function GoForm() { //這裡要對應到自己的 javascript 名稱
         }
     });
 }
+
+$(".nav-home").click(function(){
+  $("body").scrollTop(0);
+});
