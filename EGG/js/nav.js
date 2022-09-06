@@ -32,6 +32,60 @@ function GoForm() { //這裡要對應到自己的 javascript 名稱
     });
 }
 
-$(".nav-home").click(function(){
-  $("body").scrollTop(0);
-});
+
+$(function () {
+    $(".list").click(function (event) {
+      event.preventDefault();
+      var target = $(this).attr('href');
+      //var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+      $('html,body').animate(
+        {
+          scrollTop: $(target).offset().top,
+        },
+        1000
+      );
+    });
+    $(".newstop").click(function (event) {
+        event.preventDefault();
+        var target = $(this).attr('href');
+        //var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+        $('html,body').animate(
+          {
+            scrollTop: $(target).offset().top,
+          },
+          1000
+        );
+      });
+      $(".access").click(function (event) {
+        event.preventDefault();
+        var target = $(this).attr('href');
+        //var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+        $('html,body').animate(
+          {
+            scrollTop: $(target).offset().top,
+          },
+          1000
+        );
+      });
+      $(".connect").click(function (event) {
+        event.preventDefault();
+        var target = $(this).attr('href');
+        //var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+        $('html,body').animate(
+          {
+            scrollTop: $(target).offset().top,
+          },
+          1000
+        );
+      });
+
+    $(".top").click(function(){
+      $('html,body').animate({
+        scrollTop:0,
+      },1000);
+    });
+  
+    
+  }
+  );
+  
